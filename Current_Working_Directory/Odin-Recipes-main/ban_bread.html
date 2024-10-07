@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Banana Bread Recipe</title>
+    <style>
+        :root {
+            --primary-color: #9675d4;
+            --secondary-color: #fff;
+            --text-color: #333;
+            --font-heading: 'Courier New', Courier, monospace;
+            --font-body: Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            color: var(--secondary-color);
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-top: 30px;
+        }
+
+        h3 {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        img {
+            max-width: 50%;
+            height: auto;
+
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .recipe-details {
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        ul, ol {
+            color: var(--secondary-color);
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .tips {
+            background-color: rgba(255,255,255,0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .nutrition {
+            margin-top: 30px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .container {
+                padding: 10px;
+            }
+        }
+
+        .print-button {
+            background-color: var(--secondary-color);
+            color: var(--primary-color);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        .print-button:hover {
+            background-color: #f0f0f0;
+        }
+
+        @media print {
+            body {
+                background-color: #fff;
+                color: #000;
+            }
+
+            .container {
+                max-width: 100%;
+            }
+
+            h1, h2, h3 {
+                color: #000;
+            }
+
+            .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Delicious Banana Bread</h1>
+            <h3>A perfect way to use those overripe bananas!</h3>
+        </header>
+
+        <img src="img/bread.png" alt="Freshly baked banana bread" loading="lazy">
+
+        <div class="recipe-details">
+            <h2>Ingredients</h2>
+            <ul>
+                <li>2 cups (240g) all-purpose flour</li>
+                <li>1 teaspoon baking soda</li>
+                <li>¼ teaspoon salt</li>
+                <li>½ cup (113g) unsalted butter, softened</li>
+                <li>¾ cup (150g) brown sugar</li>
+                <li>2 large eggs, beaten</li>
+                <li>2 ⅓ cups (about 4-5) mashed overripe bananas</li>
+                <li>1 teaspoon vanilla extract (optional)</li>
+                <li>½ cup chopped nuts or chocolate chips (optional)</li>
+            </ul>
+
+            <h2>Instructions</h2>
+            <ol>
+                <li>Preheat the oven to 350°F (175°C). Grease a 9x5 inch loaf pan.</li>
+                <li>In a large bowl, whisk together the flour, baking soda, and salt.</li>
+                <li>In a separate bowl, cream together the butter and brown sugar until light and fluffy. Stir in the eggs, mashed bananas, and vanilla extract (if using) until well blended.</li>
+                <li>Gradually stir the banana mixture into the flour mixture, mixing just until moistened. Fold in nuts or chocolate chips if using.</li>
+                <li>Pour the batter into the prepared loaf pan.</li>
+                <li>Bake for 60 to 65 minutes, or until a toothpick inserted into the center of the loaf comes out clean.</li>
+                <li>Let the bread cool in the pan for 10 minutes, then turn out onto a wire rack to cool completely.</li>
+            </ol>
+        </div>
+
+        <div class="tips">
+            <h2>Tips for Perfect Banana Bread</h2>
+            <ul>
+                <li>Use very ripe bananas for the best flavor. The more brown spots, the better!</li>
+                <li>Don't overmix the batter. Stir just until the ingredients are combined.</li>
+                <li>For extra moisture, add ¼ cup of sour cream or Greek yogurt to the batter.</li>
+                <li>Customize your bread by adding different mix-ins like dried fruits, coconut, or spices like cinnamon or nutmeg.</li>
+            </ul>
+        </div>
+
+        <div class="nutrition">
+            <h2>Nutrition Information</h2>
+            <p>Per slice (assuming 10 slices per loaf):</p>
+            <ul>
+                <li>Calories: Approximately 250</li>
+                <li>Total Fat: 10g</li>
+                <li>Saturated Fat: 5g</li>
+                <li>Cholesterol: 50mg</li>
+                <li>Sodium: 200mg</li>
+                <li>Total Carbohydrates: 38g</li>
+                <li>Dietary Fiber: 2g</li>
+                <li>Sugars: 18g</li>
+                <li>Protein: 4g</li>
+            </ul>
+            <p>Please note that nutrition information is an estimate and may vary based on specific ingredients used.</p>
+        </div>
+
+        <button class="print-button" onclick="window.print()">Print Recipe</button>
+    </div>
+
+    <script>
+        // Add a simple JavaScript functionality to toggle ingredient amounts between US and metric units
+        document.addEventListener('DOMContentLoaded', function() {
+            const ingredients = document.querySelectorAll('ul li');
+            let isMetric = false;
+
+            ingredients.forEach(ingredient => {
+                const text = ingredient.textContent;
+                const match = text.match(/(\d+(?:\.\d+)?)\s*(?:cup|teaspoon|tablespoon)s?\s*\((\d+)g\)/);
+                if (match) {
+                    const [_, us, metric] = match;
+                    ingredient.dataset.us = `${us} ${text.split(' ')[1]}`;
+                    ingredient.dataset.metric = `${metric}g`;
+                }
+            });
+
+            document.querySelector('.recipe-details').addEventListener('click', function() {
+                isMetric = !isMetric;
+                ingredients.forEach(ingredient => {
+                    if (ingredient.dataset.us && ingredient.dataset.metric) {
+                        ingredient.textContent = isMetric ? ingredient.dataset.metric : ingredient.dataset.us;
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

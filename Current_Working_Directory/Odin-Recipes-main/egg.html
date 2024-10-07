@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Egg Salad Recipe</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --text-color: #2c3e50;
+            --background-color: #f7f7f7;
+            --card-background: rgba(255, 255, 255, 0.9);
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('https://source.unsplash.com/1600x900/?food,eggs');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background-color: var(--card-background);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+            margin: 2rem 0;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        img:hover {
+            transform: scale(1.05);
+        }
+
+        h2 {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--secondary-color);
+            margin: 1.5rem 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        ul, ol {
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 0;
+            list-style-position: inside;
+        }
+
+        li {
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+
+        .ingredients li::before {
+            content: '🥚';
+            margin-right: 10px;
+        }
+
+        .steps li {
+            background-color: rgba(78, 205, 196, 0.1);
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            counter-increment: step-counter;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            background-color: var(--secondary-color);
+            color: white;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .nutrition {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .nutrition-item {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 5px;
+            min-width: 100px;
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .nutrition-item {
+                width: calc(50% - 10px);
+            }
+        }
+
+        .dark-theme {
+            --primary-color: #ff8787;
+            --secondary-color: #66d9e8;
+            --text-color: #e0e0e0;
+            --background-color: #2c3e50;
+            --card-background: rgba(44, 62, 80, 0.9);
+        }
+
+        .print-button {
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-top: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .print-button:hover {
+            background-color: #45b7aa;
+        }
+
+        @media print {
+            body {
+                background-image: none;
+                background-color: white;
+            }
+            .container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+            .theme-toggle, .print-button {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Delicious Egg Salad</h1>
+        <img src="/api/placeholder/800/400" alt="A delicious egg salad">
+        
+        <h2>Ingredients</h2>
+        <ul class="ingredients">
+            <li>5 eggs</li>
+            <li>3 tablespoons mayonnaise</li>
+            <li>2 tablespoons Dijon mustard</li>
+            <li>2 tablespoons sweet pickle relish</li>
+            <li>1 teaspoon steak sauce</li>
+            <li>¼ teaspoon paprika</li>
+            <li>¼ teaspoon dried dill weed</li>
+            <li>Salt and ground black pepper to taste</li>
+            <li>1 pinch cayenne pepper</li>
+        </ul>
+
+        <h2>Instructions</h2>
+        <ol class="steps">
+            <li>Place eggs in a saucepan and cover with water. Bring to a boil, remove from heat, and let eggs stand in hot water for 15 minutes. Remove eggs from hot water, cool under cold running water, and peel.</li>
+            <li>Chop eggs and transfer to a large bowl.</li>
+            <li>Stir mayonnaise, Dijon mustard, sweet pickle relish, steak sauce, paprika, and dill into eggs until well mixed; season with salt and black pepper. Cover and refrigerate until chilled, if desired.</li>
+            <li>Sprinkle with cayenne pepper before serving.</li>
+        </ol>
+
+        <h2>Nutrition Information</h2>
+        <div class="nutrition">
+            <div class="nutrition-item">
+                <strong>Calories:</strong> 215
+            </div>
+            <div class="nutrition-item">
+                <strong>Protein:</strong> 10g
+            </div>
+            <div class="nutrition-item">
+                <strong>Fat:</strong> 18g
+            </div>
+            <div class="nutrition-item">
+                <strong>Carbs:</strong> 3g
+            </div>
+        </div>
+
+        <button class="print-button" onclick="window.print()">Print Recipe</button>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+
+    <script>
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-theme');
+            const icon = document.querySelector('#themeToggle i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        }
+
+        // Event listener for theme toggle
+        document.getElementById('themeToggle').addEventListener('click', toggleDarkMode);
+
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

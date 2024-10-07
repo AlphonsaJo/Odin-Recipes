@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odin Recipes - Culinary Delights</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --text-color: #2c3e50;
+            --background-color: #f7f7f7;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: background-image 0.5s ease;
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5em;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .recipe-select {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--secondary-color);
+        }
+
+        select, button {
+            padding: 0.75rem;
+            font-size: 1em;
+            width: 100%;
+            border-radius: 5px;
+            border: 2px solid var(--secondary-color);
+            background-color: white;
+            color: var(--text-color);
+            transition: all 0.3s ease;
+        }
+
+        select:focus, button:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(78, 205, 196, 0.5);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            margin-top: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        button:hover {
+            background-color: #ff8787;
+            transform: translateY(-2px);
+        }
+
+        .featured-recipes {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .recipe-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin: 0.5rem;
+            width: calc(50% - 1rem);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .recipe-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .recipe-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+
+        .recipe-card h3 {
+            margin: 0.5rem 0;
+            color: var(--primary-color);
+        }
+
+        .theme-toggle {
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            .recipe-card {
+                width: 100%;
+            }
+        }
+
+        .dark-theme {
+            --primary-color: #ff8787;
+            --secondary-color: #66d9e8;
+            --text-color: #e0e0e0;
+            --background-color: #2c3e50;
+        }
+
+        .dark-theme .container {
+            background-color: rgba(44, 62, 80, 0.9);
+        }
+
+        .dark-theme select, .dark-theme button {
+            background-color: #34495e;
+            color: var(--text-color);
+        }
+
+        .dark-theme .recipe-card {
+            background-color: #34495e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Odin Recipes</h1>
+        <div class="recipe-select">
+            <label for="recipeDropdown">Choose a recipe:</label>
+            <select id="recipeDropdown">
+                <option value="">Select a recipe</option>
+                <option value="egg.html">Egg Salad</option>
+                <option value="ban_bread.html">Banana Bread</option>
+                <option value="pasta.html">Creamy Garlic Pasta</option>
+                <option value="smoothie.html">Berry Blast Smoothie</option>
+            </select>
+        </div>
+        <button id="changeImageButton">Change Background</button>
+        <div class="featured-recipes">
+            <div class="recipe-card">
+                <img src="/api/placeholder/200/150" alt="Egg Salad">
+                <h3>Egg Salad</h3>
+                <p>A classic lunch favorite</p>
+            </div>
+            <div class="recipe-card">
+                <img src="/api/placeholder/200/150" alt="Banana Bread">
+                <h3>Banana Bread</h3>
+                <p>Sweet and moist treat</p>
+            </div>
+        </div>
+    </div>
+    <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+
+    <script>
+        // Array of background images
+        const backgroundImages = ['bg1.jpg', 'bg2.jpg', 'bg3.jpg', 'bg4.jpg', 'bg5.jpg'];
+        let currentImageIndex = 0;
+
+        // Function to change background image
+        function changeBackgroundImage() {
+            currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+            document.body.style.backgroundImage = `url("${backgroundImages[currentImageIndex]}")`;
+        }
+
+        // Function to toggle dark mode
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-theme');
+            const icon = document.querySelector('#themeToggle i');
+            icon.classList.toggle('fa-moon');
+            icon.classList.toggle('fa-sun');
+        }
+
+        // Event listeners
+        window.addEventListener('load', function() {
+            alert('Welcome to Odin Recipes! Discover culinary delights.');
+            changeBackgroundImage(); // Set initial background
+        });
+
+        document.getElementById('changeImageButton').addEventListener('click', changeBackgroundImage);
+
+        document.getElementById('recipeDropdown').addEventListener('change', function() {
+            const recipe = this.value;
+            if (recipe) {
+                window.location.href = recipe;
+            }
+        });
+
+        document.getElementById('themeToggle').addEventListener('click', toggleDarkMode);
+
+        // Add smooth scrolling to all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Add hover effect to recipe cards
+        document.querySelectorAll('.recipe-card').forEach(card => {
+            card.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.05)';
+            });
+            card.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
